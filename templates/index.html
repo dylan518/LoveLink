@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Google Sign-In App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="google-signin-client_id"
+        content="1038325471078-255fgp3191kfd7sfrsbqqcbiim4vonq1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" defer></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Welcome to Simple Google Sign-In App</h1>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <div class="user-info" id="user-info"></div>
+        <button onclick="signOut();" class="signout-btn">Sign Out</button>
+    </div>
+    <script>startApp();</script>
+</body>
+
+</html>
