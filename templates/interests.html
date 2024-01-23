@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LoveLink Interests</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Welcome to LoveLink💕🔥🥵</h1>
+        <!-- Personalized Greeting -->
+        <div id="greeting">
+            <p>Hi {{ session['name'] }} ({{ session['email'] }}),</p>
+            <p>Welcome back beautiful! Here you can add the names of your romantic interests. Someone you want to
+                ask on a date, but don't know how they feel? This is the place to put their name. If they feel same way
+                , we'll let you know! All of your data is yours and no one elses. Other than for the purpose of
+                notifying matches no one will have access to your data.</p>
+        </div>
+
+        <div class="interest-list-container">
+            <h2>Your Interests</h2>
+            <div id="interest-list">
+                {% for interest in interests %}
+                <span class="interest-item">
+                    {{ interest }}
+                    <button onclick="removeInterest('{{ interest }}');" class="remove-interest-btn">X</button>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Interest Form -->
+        <div class="interest-form-container">
+            <input type="text" name="name" id="interest-name" placeholder="Enter a name...">
+        </div>
+
+
+        <div id="submission-message"></div> <!-- Placeholder for submission messages -->
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <button onclick="submitInterest(event);" class="btn">Add Interest</button>
+            <button onclick="signOut();" class="btn">Sign Out</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

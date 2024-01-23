@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LoveLink</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Welcome to LoveLink💕🔥🥵</h1>
+        <div class="info-container">
+            <div class="user-count-box">
+                <span class="info-title">Total Users:</span>
+                <div class="digits">{{ user_count }}</div>
+            </div>
+            <div class="release-countdown-box">
+                <span class="info-title">Days Until Results are Released:</span>
+                <div class="digits">{{ days_until_release }}</div>
+            </div>
+        </div>
+        <p class="description">
+            Have you ever stayed up night wondering...
+            Are they just being friendly? Are they flirting with me? Or are
+            they just hopelessly awkward? Does your gym crush think you are cute? Is your lab partner secretly obsessed
+            with you? Do you have sexy secret admirers? Fret no more! LoveLink💕🔥🥵
+            will resolve all your issues. Simply, anonymously enter the list of names(first and last) you are interested
+            in and we will
+            email you by the end of the month if they feel the same way.
+        </p>
+        <div id="buttonDiv"></div> <!-- Google Sign-In button will be rendered here -->
+        <div class="user-info" id="user-info"></div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+</body>
+
+</html>

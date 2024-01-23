@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Simple Google Sign-In App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveLink</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <meta name="google-signin-client_id"
-        content="1038325471078-255fgp3191kfd7sfrsbqqcbiim4vonq1.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" defer></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
     <div class="main-container">
-        <h1>Welcome to Simple Google Sign-In App</h1>
-        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <div class="title-container">
+            <h1>Welcome to LoveLink</h1>
+            <div id="user-count-container">
+                Total Submissions: <span id="user-count">Loading...</span>
+            </div>
+        </div>
+        <p class="description">
+            Are you to afraid to ask your gym crush out? The cute guy who sits next to you in Spanish class?
+            Maybe you were disapointed by the result of the Dartmouth Marriage Pact and need find new oppurtunites?
+            Find your secret admires with LoveLink!
+            Sign up, add the names of those you're interested in, and see who feels the same about you!
+            The results will be shared at the end of February. Get ready to meet your next true love!
+        </p>
+        <div id="buttonDiv"></div> <!-- Google Sign-In button will be rendered here -->
         <div class="user-info" id="user-info"></div>
         <button onclick="signOut();" class="signout-btn">Sign Out</button>
+
+        <!-- Interest Form -->
+        <div class="interest-form-container">
+            <input type="text" name="name" id="interest-name" placeholder="Enter a name...">
+            <button onclick="submitInterest(event);" class="interest-btn">Add Interest</button>
+        </div>
+        <div id="submission-message"></div> <!-- Placeholder for submission messages -->
     </div>
-    <script>startApp();</script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

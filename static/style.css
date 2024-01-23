@@ -1,49 +1,319 @@
-/* Add some padding and set the font size for the whole document */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    font-size: 14px;
-    background-color: #f4f4f4;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #444;
+    line-height: 1.6;
 }
 
-/* Style for the main container */
 .main-container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 50px;
+    border-color: #449d44;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the Google Sign-In button */
-.g-signin2 {
-    margin: 20px 0;
+header h1 {
+    color: #a566b1;
+    margin-bottom: 0.5rem;
 }
 
-/* Style for the user info display */
-.user-info {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #e9e9e9;
-    border-radius: 5px;
+header p {
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #030000;
+    align-items: center;
+    background-color: #a566b1;
+    padding: 1rem 2rem;
 }
 
-/* Style for the sign out button */
-.signout-btn {
-    background-color: #4285f4;
+header p {
+    background-color: #a566b1;
     color: white;
-    padding: 10px 20px;
-    border: none;
+    padding: 1.5rem;
     border-radius: 5px;
+    border-color: #ff69b4;
+}
+
+#user-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.user-info {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.signout-btn {
+    background-color: #a566b1;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 2rem;
 }
 
 .signout-btn:hover {
-    background-color: #357ae8;
+    background-color: #a566b1;
 }
 
-/* Add some margin to the top of the page */
-h1 {
-    margin-top: 0;
+#interest-section {
+    text-align: center;
 }
+
+
+
+.interest-btn {
+    background-color: #a566b1;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.interest-btn:hover {
+    background-color: #449d44;
+}
+
+#submission-message {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    /* Hidden by default */
+}
+
+/* Utility classes */
+/* Styles for the button container */
+.button-container {
+    margin-top: 1rem;
+    display: flex;
+    /* Enables flexbox */
+    justify-content: space-between;
+    /* Distributes space evenly between the buttons */
+}
+
+/* Styles for buttons */
+.btn {
+    margin-top: 1rem;
+    background-color: #a566b1;
+    border: none;
+    padding: 1rem;
+    /* Adjust padding to fit the buttons in one line */
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+    /* Each button will take equal space */
+    margin: 0 0.5rem;
+    /* This will add spacing between buttons */
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+    text-align: center;
+}
+
+/* Remove margin from the first and last buttons to align them with the container's edge */
+.button-container> :first-child {
+    margin-left: 0;
+}
+
+.button-container> :last-child {
+    margin-right: 0;
+}
+
+
+/* Modify the interest form container */
+.interest-form-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack input and button vertically */
+    align-items: center;
+    /* Align input and button in the center */
+}
+
+/* Ensure the input field takes full width */
+#interest-name {
+    width: calc(100% - 2rem);
+    /* Full width minus padding */
+    margin-bottom: 0.5rem;
+    /* Add some space between the input and the button */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto the next line on small screens */
+}
+
+#user-count-container {
+    text-align: right;
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.pink-box {
+    background-color: #ff69b4;
+    /* Adjust the color to the desired shade of pink */
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.digit-box {
+    display: inline-block;
+    background-color: #444;
+    /* A dark background for the digits */
+    color: #fff;
+    /* White text color */
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 1.5rem;
+    /* Fixed width for uniform digit boxes */
+    text-align: center;
+}
+
+#submission-message.success {
+    background-color: #5cb85c;
+    display: block;
+}
+
+#submission-message.error {
+    background-color: #d9534f;
+    display: block;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.digits {
+    display: inline-block;
+    background-color: #ff69b4;
+    /* Bright pink */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-count-box,
+.release-countdown-box {
+    background-color: #eee;
+    /* Light gray for the box */
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Adjust the width of the input to match buttons if they are full width */
+#interest-name {
+    width: calc(100% - 4rem);
+    /* Adjust the width based on the parent container's padding */
+    margin: 0.5rem 0;
+    /* Consistent vertical spacing with buttons */
+    padding: 1rem 2rem;
+    /* Match the button padding for visual consistency */
+    box-sizing: border-box;
+    /* Include padding in the input width */
+}
+
+/* Ensure the interest form container is styled properly */
+.interest-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Stretch children to match the width */
+}
+
+/* Existing CSS */
+.interest-list-container {
+    margin-top: 1rem;
+}
+
+#interest-list {
+    /* Allow wrapping of interest items */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.interest-item {
+    /* Inline-block allows items to sit next to each other and wrap */
+    display: inline-flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    /* Space between items */
+    margin-bottom: 0.5rem;
+    /* Space between lines */
+    font-size: 0.9rem;
+    /* Smaller text for the names */
+}
+
+.remove-interest-btn {
+    display: inline-flex;
+    /* Use flexbox for better centering */
+    align-items: center;
+    /* Vertically center the content */
+    justify-content: center;
+    /* Horizontally center the content */
+    background-color: #d9534f;
+    /* Red color for the removal button */
+    color: white;
+    border: none;
+    padding: 0;
+    /* Remove padding to let flexbox handle the alignment */
+    border-radius: 50%;
+    /* Circular button */
+    cursor: pointer;
+    font-weight: bold;
+    width: 1.5em;
+    /* Fixed width and height to make the 'X' buttons consistent */
+    height: 1.5em;
+    font-size: 0.9rem;
+    /* Adjust the font-size if necessary */
+    margin-left: 0.5rem;
+}
+
+/* Rest of CSS */
