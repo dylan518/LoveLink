@@ -3,3 +3,6 @@ Flask
 gunicorn
 requests
 google-auth
+psycopg2-binary
+SQLAlchemy
+Flask-SQLAlchemy
